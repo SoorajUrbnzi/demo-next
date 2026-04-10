@@ -1,0 +1,122 @@
+export default function BlogFooter() {
+  return (
+    <div className="bg-black text-white">
+
+      {/* LET'S TALK SECTION */}
+      <section className="text-center py-32 px-6">
+
+        <h1 className="text-[120px] md:text-[160px] font-extrabold text-lime-400 leading-none mb-10">
+          LET’S TALK
+        </h1>
+
+        <a
+          href="mailto:hello@pentaclay.com"
+          className="block text-[40px] md:text-[60px] font-semibold text-gray-300 hover:text-lime-400 transition-colors duration-300 mb-20"
+        >
+          hello@pentaclay.com
+        </a>
+
+        <div className="flex justify-center">
+          <div className="group relative w-40 h-40 rounded-full border border-gray-500 flex items-center justify-center cursor-pointer overflow-hidden">
+
+            <div className="absolute inset-0 bg-lime-400 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full"></div>
+
+            <span className="relative z-10 font-semibold text-sm group-hover:text-black transition">
+              CONTACT ↗
+            </span>
+
+            <div className="absolute bottom-0 left-0 w-12 h-12 bg-lime-400 rounded-tr-full opacity-80"></div>
+
+          </div>
+        </div>
+
+      </section>
+
+
+      {/* FOOTER */}
+      <footer className="max-w-7xl mx-auto px-6 py-0 ">
+
+        <div className="grid md:grid-cols-4 gap-12">
+
+          {/* About */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">About Us</h3>
+
+            <p className="text-gray-400 leading-relaxed mb-6">
+              At onnat we are a dynamic creative agency dedicated to transforming your vision into captivating digital experiences.
+            </p>
+
+            <div className="flex gap-4">
+              <div className="w-10 h-10 flex items-center justify-center bg-[#111] rounded-full">f</div>
+              <div className="w-10 h-10 flex items-center justify-center bg-[#111] rounded-full">X</div>
+              <div className="w-10 h-10 flex items-center justify-center bg-[#111] rounded-full">ig</div>
+              <div className="w-10 h-10 flex items-center justify-center bg-[#111] rounded-full">yt</div>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Navigation</h3>
+
+            <ul className="space-y-4 text-gray-400">
+              <li>Home</li>
+              <li>About</li>
+              <li>Services</li>
+              <li>My Projects</li>
+              <li>Blog</li>
+              <li>404</li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Services</h3>
+
+            <ul className="space-y-4 text-gray-400">
+              <li>Analytics & Strategy</li>
+              <li>UX/UI Design</li>
+              <li>Branding & Identity</li>
+              <li>Web Development</li>
+              <li>Get the Template</li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
+
+            <div className="flex items-center border-b border-gray-700 pb-3">
+
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-transparent outline-none flex-1 text-gray-400 placeholder-gray-500"
+              />
+
+              <button className="w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center text-black">
+                →
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
+
+        {/* bottom line */}
+        <div className="border-t border-gray-800 mt-20 pt-6 text-gray-400 text-sm">
+          © 2024 All rights for Pentaclay
+        </div>
+
+        {/* BIG BRAND TEXT */}
+        <div className="w-full text-center overflow-hidden mt-10">
+          <h1 className="text-[180px] md:text-[260px] font-extrabold text-gray-200 leading-none tracking-tight">
+            PENTOS
+          </h1>
+        </div>
+
+      </footer>
+
+    </div>
+  )
+}

@@ -1,0 +1,104 @@
+"use client"
+
+import Image from "next/image"
+
+export default function AboutSection() {
+  return (
+    <section className="bg-[#0a0a0a] text-white py-28 px-8 lg:px-20 relative overflow-hidden">
+
+      {/* neon accent */}
+      <div className="absolute right-24 top-100">
+        <div className="w-10 h-4 bg-lime-400 rotate-45 mb-3"></div>
+        <div className="w-10 h-4 bg-lime-400 rotate-45"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto " >
+
+        {/* label */}
+        <div className="flex items-center gap-5 mb-6">
+          <span className="text-gray-400 text-sm tracking-widest uppercase mt-50 absolute left-50 ">
+            About Me
+          </span>
+          <div className="h-[1px] w-20 bg-gray-600 mt-50 absolute left-75"  ></div>
+        </div>
+
+        {/* heading */}
+        <h1 className="text-[72px] leading-[80px] font-bold mb-20 max-w-4xl mt-40 absolute left-50">
+          Passion for <br /> Digital Innovation
+        </h1>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* IMAGE */}
+          <div className="relative w-[420px] h-[520px]  flex items-center absolute left-20 mt-120 ">
+            <Image
+              src="/SERVER%20VAPT.jpg"
+              alt="about"
+              fill
+              className="object-cover"
+            />
+
+            {/* dotted overlay effect */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle,_rgba(0,0,0,0.6)_1px,_transparent_1px)] bg-[size:6px_6px] opacity-40"></div>
+          </div>
+
+          {/* RIGHT CONTENT */}
+          <div className=" mt-[550px] absolute left-[720px]">
+
+            <p className="text-gray-400 mb-8 leading-7 max-w-xl ">
+              My journey began with a simple yet powerful idea: to
+              revolutionise the digital landscape through innovative
+              solutions and exceptional creativity.
+            </p>
+
+            <p className="text-gray-400 mb-12 leading-7 max-w-xl">
+              Driven by a passion for design and technology, I set out to
+              create unique digital experiences that make an impact online.
+            </p>
+
+            {/* stats */}
+            <div className="flex items-center gap-10 mb-16">
+
+              <div>
+                <h3 className="text-2xl font-bold text-lime-400">17K</h3>
+                <p className="text-gray-400 text-sm mt-1">
+                  Projects Completed
+                </p>
+              </div>
+
+              <div className="w-px h-10 bg-gray-700"></div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-lime-400">145+</h3>
+                <p className="text-gray-400 text-sm mt-1">
+                  Happy Clients
+                </p>
+              </div>
+
+              <div className="w-px h-10 bg-gray-700"></div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-lime-400">
+                  10,459
+                </h3>
+                <p className="text-gray-400 text-sm mt-1">
+                  Cups of Coffee
+                </p>
+              </div>
+
+            </div>
+
+            {/* button */}
+           <button className="relative w-27 h-27 rounded-full border border-gray-600 flex items-center justify-center text-sm tracking-wide transition-all duration-300 hover:bg-lime-400 hover:text-black hover:border-lime-400">
+
+           ABOUT ME ↗
+
+          <span className="absolute bottom-3 left-4 w-5 h-5 bg-lime-400 rounded-full"></span>
+
+          </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
