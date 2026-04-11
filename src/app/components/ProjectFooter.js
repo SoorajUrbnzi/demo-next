@@ -3,29 +3,34 @@ export default function ProjectFooter() {
     <div className="bg-black text-white">
 
       {/* LET'S TALK SECTION */}
-      <section className="text-center py-32 px-6">
+      <section className="text-center py-32 px-6 max-lg:py-16 max-lg:px-4">
 
-        <h1 className="text-[120px] md:text-[160px] font-extrabold text-lime-400 leading-none mb-10">
+        <h1 className="text-[120px] md:text-[160px] font-extrabold text-lime-400 leading-none mb-10
+        max-lg:text-[48px] max-lg:mb-6">
           LET’S TALK
         </h1>
 
         <a
           href="mailto:hello@pentaclay.com"
-          className="block text-[40px] md:text-[60px] font-semibold text-gray-300 hover:text-lime-400 transition-colors duration-300 mb-20"
+          className="block text-[40px] md:text-[60px] font-semibold text-gray-300 hover:text-lime-400 transition-colors duration-300 mb-20
+          max-lg:text-[18px] max-lg:mb-10 break-words"
         >
           hello@pentaclay.com
         </a>
 
         <div className="flex justify-center">
-          <div className="group relative w-40 h-40 rounded-full border border-gray-500 flex items-center justify-center cursor-pointer overflow-hidden">
+          <div className="group relative w-40 h-40 rounded-full border border-gray-500 flex items-center justify-center cursor-pointer overflow-hidden
+          max-lg:w-24 max-lg:h-24">
 
             <div className="absolute inset-0 bg-lime-400 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full"></div>
 
-            <span className="relative z-10 font-semibold text-sm group-hover:text-black transition">
+            <span className="relative z-10 font-semibold text-sm group-hover:text-black transition
+            max-lg:text-xs">
               CONTACT ↗
             </span>
 
-            <div className="absolute bottom-0 left-0 w-12 h-12 bg-lime-400 rounded-tr-full opacity-80"></div>
+            <div className="absolute bottom-0 left-0 w-12 h-12 bg-lime-400 rounded-tr-full opacity-80
+            max-lg:w-8 max-lg:h-8"></div>
 
           </div>
         </div>
@@ -34,9 +39,9 @@ export default function ProjectFooter() {
 
 
       {/* FOOTER */}
-      <footer className="max-w-7xl mx-auto px-6 py-0 ">
+      <footer className="max-w-7xl mx-auto px-6 py-0 max-lg:px-4">
 
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-4 gap-12 max-lg:grid-cols-1 max-lg:gap-10">
 
           {/* About */}
           <div>
@@ -90,7 +95,7 @@ export default function ProjectFooter() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-transparent outline-none flex-1 text-gray-400 placeholder-gray-500"
+                className="bg-transparent outline-none flex-1 text-gray-400 placeholder-gray-500 text-sm"
               />
 
               <button className="w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center text-black">
@@ -104,13 +109,14 @@ export default function ProjectFooter() {
 
 
         {/* bottom line */}
-        <div className="border-t border-gray-800 mt-20 pt-6 text-gray-400 text-sm">
+        <div className="border-t border-gray-800 mt-20 pt-6 text-gray-400 text-sm max-lg:text-center">
           © 2024 All rights for Pentaclay
         </div>
 
         {/* BIG BRAND TEXT */}
         <div className="w-full text-center overflow-hidden mt-10">
-          <h1 className="text-[180px] md:text-[260px] font-extrabold text-gray-200 leading-none tracking-tight">
+          <h1 className="text-[180px] md:text-[260px] font-extrabold text-gray-200 leading-none tracking-tight
+          max-lg:text-[60px]">
             PENTOS
           </h1>
         </div>

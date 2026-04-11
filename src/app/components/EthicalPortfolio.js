@@ -30,20 +30,21 @@ export default function EthicalPortfolio() {
   return (
     <section className="bg-black text-white py-28">
 
-      <div className="max-w-7xl mx-auto grid grid-cols-2 gap-10">
+      {/* ✅ ONLY CHANGE: mobile = 1 column */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-0">
 
         {projects.map((project, index) => (
           <Link
-            href={project.link}   // ✅ simple like navbar
+            href={project.link}
             key={index}
-            className={`relative group overflow-hidden block ${index % 2 !== 0 ? "mt-13" : ""}`}
+            className={`relative group overflow-hidden block ${index % 2 !== 0 ? "mt-13 md:mt-13 mt-0" : ""}`}
           >
 
-            {/* IMAGE */}
+            {/* ✅ ONLY CHANGE: mobile height */}
             <img
               src={project.image}
               alt=""
-              className="w-full h-[660px] object-cover transition duration-500 group-hover:scale-110"
+              className="w-full h-[300px] md:h-[660px] object-cover transition duration-500 group-hover:scale-110"
             />
 
             {/* OVERLAY */}
@@ -58,7 +59,7 @@ export default function EthicalPortfolio() {
 
             {/* TITLE */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition duration-300">
-              <div className="bg-lime-400 text-black px-6 py-2 text-sm font-semibold">
+              <div className="bg-lime-400 text-black px-6 py-2 text-sm font-semibold text-center">
                 {project.title}
               </div>
             </div>

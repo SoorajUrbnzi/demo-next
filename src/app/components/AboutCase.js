@@ -2,41 +2,41 @@ import React from "react";
 
 export default function AboutCase() {
   return (
-    <section className="w-full bg-black text-white py-20 px-6 md:px-16">
+    <section className="w-full bg-black text-white py-16 md:py-20 px-4 md:px-16">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         
         {/* LEFT SIDE */}
         <div>
           {/* Small Heading */}
           <div className="flex items-center gap-4 mb-6">
-            <h4 className="text-gray-400 text-base uppercase tracking-widest">
+            <h4 className="text-gray-400 text-sm md:text-base uppercase tracking-widest">
               About Me
             </h4>
-            <div className="w-16 h-[1px] bg-gray-600"></div>
+            <div className="w-12 md:w-16 h-[1px] bg-gray-600"></div>
           </div>
 
           {/* Big Title */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold leading-tight mb-6">
             Professional <br />
             Problem- <br />
             Solving Skills
           </h1>
 
           {/* Description */}
-          <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-lg">
+          <p className="text-gray-400 text-base md:text-xl mb-8 md:mb-10 max-w-lg">
             My journey started with a simple yet powerful vision: to transform
             the digital landscape through innovation and creativity.
           </p>
 
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-5 md:space-y-6">
             
             {/* Email */}
             <div className="flex items-center gap-4">
               <div className="bg-lime-400 p-3 rounded-full text-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5"
+                  className="w-4 h-4 md:w-5 md:h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -45,8 +45,10 @@ export default function AboutCase() {
                 </svg>
               </div>
               <div>
-                <p className="text-gray-400 text-base">Email me</p>
-                <p className="font-semibold text-lg">hello@pentaclay.com</p>
+                <p className="text-gray-400 text-sm md:text-base">Email me</p>
+                <p className="font-semibold text-base md:text-lg break-all">
+                  hello@pentaclay.com
+                </p>
               </div>
             </div>
 
@@ -55,7 +57,7 @@ export default function AboutCase() {
               <div className="bg-lime-400 p-3 rounded-full text-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5"
+                  className="w-4 h-4 md:w-5 md:h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -67,8 +69,10 @@ export default function AboutCase() {
                 </svg>
               </div>
               <div>
-                <p className="text-gray-400 text-base">Make a call</p>
-                <p className="font-semibold text-lg">(+990) 683 58325</p>
+                <p className="text-gray-400 text-sm md:text-base">Make a call</p>
+                <p className="font-semibold text-base md:text-lg">
+                  (+990) 683 58325
+                </p>
               </div>
             </div>
 
@@ -76,11 +80,11 @@ export default function AboutCase() {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="w-[500px] h-[500px] md:h-[700px] object-cover">
+        <div className="w-full h-[320px] sm:h-[420px] md:w-[500px] md:h-[700px]">
           <img
             src="/shield key.jpg"
             alt="About"
-            className="w-400 h-full object-center object-cover"
+            className="w-full h-full object-center object-cover"
           />
         </div>
 

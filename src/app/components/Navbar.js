@@ -3,9 +3,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useState } from "react"
 
 export default function Navbar() {
   const pathname = usePathname()
+  const [open, setOpen] = useState(false)
 
   const navLink = (path) =>
     `pb-2 relative ${
@@ -14,7 +16,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-[#0a0a0a] text-white">
-      <div className="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 py-5 md:py-6 flex items-center justify-between">
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
@@ -24,15 +26,22 @@ export default function Navbar() {
             width={40}
             height={40}
           />
-          <span className="text-2xl font-semibold">
+          <span className="text-xl md:text-2xl font-semibold">
             Pentos<span className="text-gray-400">.</span>
           </span>
         </Link>
 
-        {/* NAVIGATION */}
+        {/* MOBILE MENU BUTTON */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-2xl"
+        >
+          ☰
+        </button>
+
+        {/* DESKTOP NAVIGATION (unchanged) */}
         <nav className="relative hidden md:flex items-center gap-10">
 
-          {/* HOME */}
           <Link href="/" className={navLink("/")}>
             Home
             {pathname === "/" && (
@@ -40,7 +49,6 @@ export default function Navbar() {
             )}
           </Link>
 
-          {/* PROJECT */}
           <Link href="/project" className={navLink("/project")}>
             Project
             {pathname === "/project" && (
@@ -48,7 +56,6 @@ export default function Navbar() {
             )}
           </Link>
 
-          {/* ABOUT */}
           <Link href="/about" className={navLink("/about")}>
             About
             {pathname === "/about" && (
@@ -56,7 +63,6 @@ export default function Navbar() {
             )}
           </Link>
 
-          {/* BLOG */}
           <Link href="/blog" className={navLink("/blog")}>
             Blog
             {pathname === "/blog" && (
@@ -64,7 +70,6 @@ export default function Navbar() {
             )}
           </Link>
 
-          {/* ALL PAGES WITH DROPDOWN */}
           <div className="relative group">
             <Link
               href="/pages"
@@ -73,7 +78,6 @@ export default function Navbar() {
               All Pages ↓
             </Link>
 
-            {/* DROPDOWN */}
             <div className="absolute top-full left-0 mt-4 w-56 bg-black border border-gray-700 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
               <div className="flex flex-col text-gray-300 py-4">
                 <Link href="/" className="px-5 py-2 hover:text-lime-400">Home</Link>
@@ -87,22 +91,35 @@ export default function Navbar() {
                 <Link href="/404" className="px-5 py-2 hover:text-lime-400">404</Link>
               </div>
             </div>
+
           </div>
 
-          {/* bottom nav line */}
           <div className="absolute left-0 -bottom-3 w-full h-[1px] bg-gray-700"></div>
-
         </nav>
 
-        {/* CONTACT BUTTON */}
-        <Link href="/contact">
+        {/* DESKTOP CONTACT BUTTON */}
+        <Link href="/contact" className="hidden md:block">
           <button className="bg-lime-400 text-black px-6 py-3 font-semibold flex items-center gap-2 hover:opacity-90 transition">
             CONTACT
             <span>↗</span>
           </button>
         </Link>
-
       </div>
+
+      {/* MOBILE MENU */}
+      {open && (
+        <div className="md:hidden bg-black border-t border-gray-800 px-5 py-6 space-y-4">
+          <Link href="/" className="block text-gray-300">Home</Link>
+          <Link href="/project" className="block text-gray-300">Project</Link>
+          <Link href="/about" className="block text-gray-300">About</Link>
+          <Link href="/blog" className="block text-gray-300">Blog</Link>
+          <Link href="/contact" className="block text-gray-300">Contact</Link>
+
+          <button className="w-full bg-lime-400 text-black py-3 mt-4">
+            CONTACT ↗
+          </button>
+        </div>
+      )}
     </header>
   )
 }

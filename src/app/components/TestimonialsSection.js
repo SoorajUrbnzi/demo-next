@@ -1,6 +1,7 @@
 export default function TestimonialsSection() {
   return (
-    <section className="relative overflow-hidden py-32 px-8 lg:px-24 text-white bg-[#0b0b0b]">
+    <section className="relative overflow-hidden py-32 px-8 lg:px-24 text-white bg-[#0b0b0b]
+    max-lg:py-16 max-lg:px-5">
 
       {/* subtle dark glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.04),transparent_40%)]"></div>
@@ -11,41 +12,47 @@ export default function TestimonialsSection() {
       <div className="relative z-10">
 
         {/* label */}
-        <div className="flex items-center gap-4 mb-10">
-          <span className="text-gray-400 text-sm">Testimonials</span>
-          <div className="w-20 h-[1px] bg-gray-600"></div>
+        <div className="flex items-center gap-4 mb-10 max-lg:mb-6">
+          <span className="text-gray-400 text-sm max-lg:text-xs">Testimonials</span>
+          <div className="w-20 h-[1px] bg-gray-600 max-lg:w-12"></div>
         </div>
 
         {/* heading */}
-        <h2 className="text-[130px] font-bold leading-none mb-24 tracking-tight text-white drop-shadow-[0_10px_40px_rgba(0,0,0,0.8)]">
+        <h2 className="text-[130px] font-bold leading-none mb-24 tracking-tight text-white drop-shadow-[0_10px_40px_rgba(0,0,0,0.8)]
+        max-lg:text-[36px] max-lg:mb-12">
           What my clients say
         </h2>
 
-        <div className="grid lg:grid-cols-2 items-center gap-20">
+        <div className="grid lg:grid-cols-2 items-center gap-20 max-lg:gap-10">
 
           <div>
 
-            <div className="text-[#C9F31D] text-[80px] mb-12 font-bold leading-none">
+            <div className="text-[#C9F31D] text-[80px] mb-12 font-bold leading-none
+            max-lg:text-[40px] max-lg:mb-6">
               “”
             </div>
 
-            <p className="text-gray-300 text-3xl leading-relaxed max-w-5xl mb-10">
+            <p className="text-gray-300 text-3xl leading-relaxed max-w-5xl mb-10
+            max-lg:text-base max-lg:leading-7 max-lg:mb-6">
               Working with Pentos is a fantastic experience. He truly understood our vision and turned our dream home into a reality. The attention to detail and dedication were beyond my imagination.
             </p>
 
             <div>
-              <p className="font-semibold text-xl">Cameron Williamson</p>
-              <p className="text-gray-400 text-sm">CEO, Ishkon</p>
+              <p className="font-semibold text-xl max-lg:text-base">Cameron Williamson</p>
+              <p className="text-gray-400 text-sm max-lg:text-xs">CEO, Ishkon</p>
             </div>
 
           </div>
 
           <div className="flex justify-center lg:justify-end">
+
             <img
               src="/SERVER VAPT.jpg"
               alt="client"
-              className="w-[420px] h-[420px] object-cover rotate-[12deg] rounded-md shadow-[0_40px_90px_rgba(0,0,0,0.8) mx-[200px]"
+              className="w-[420px] h-[420px] object-cover rotate-[12deg] rounded-md shadow-[0_40px_90px_rgba(0,0,0,0.8) mx-[200px]
+              max-lg:w-[260px] max-lg:h-[260px] max-lg:mx-0 max-lg:rotate-6"
             />
+
           </div>
 
         </div>

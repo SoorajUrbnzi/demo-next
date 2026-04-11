@@ -1,7 +1,7 @@
 export default function StratServerVapt() {
   return (
     <section
-      className="w-full h-screen bg-center bg-cover bg-no-repeat"
+      className="w-full h-[60vh] md:h-screen bg-center bg-cover bg-no-repeat"
       style={{
         backgroundImage: "url('/SERVER VAPT.jpg')",
       }}

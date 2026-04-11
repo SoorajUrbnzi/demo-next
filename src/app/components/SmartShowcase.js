@@ -1,7 +1,7 @@
 export default function SmartShowcase() {
   return (
     <section
-      className="w-full h-screen bg-center bg-cover bg-no-repeat"
+      className="w-full min-h-[70vh] md:h-screen bg-center bg-cover bg-no-repeat"
       style={{
         backgroundImage: "url('/showcase.webp')",
       }}
