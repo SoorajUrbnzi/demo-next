@@ -110,7 +110,7 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-black border-t border-gray-800 px-5 py-6 space-y-4">
           <Link href="/" className="block text-gray-300">Home</Link>
-          <Link href="/project" className="block text-gray-300">Project</Link>
+          <Link href="/project" className="block text-gray-300">projects</Link>
           <Link href="/about" className="block text-gray-300">About</Link>
           <Link href="/blog" className="block text-gray-300">Blog</Link>
           <Link href="/contact" className="block text-gray-300">Contact</Link>
