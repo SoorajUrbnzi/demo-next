@@ -1,10 +1,20 @@
+"use client"
+
+import { motion } from "framer-motion";
+
 export default function AwardsSection() {
   return (
     <section className="relative bg-black text-white py-36 overflow-hidden max-lg:py-20">
 
       {/* Animated Star */}
-      <div className="absolute left-[20px] top-[340px] w-[90px] h-[90px] flex items-center justify-center
-      max-lg:left-2 max-lg:top-10 max-lg:w-[50px] max-lg:h-[50px]">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.6, rotate: -90 }}
+        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="absolute left-[20px] top-[340px] w-[90px] h-[90px] flex items-center justify-center
+      max-lg:left-2 max-lg:top-10 max-lg:w-[50px] max-lg:h-[50px]"
+      >
 
         <svg
           viewBox="0 0 100 100"
@@ -19,26 +29,44 @@ export default function AwardsSection() {
           <line x1="88" y1="12" x2="12" y2="88"/>
         </svg>
 
-      </div>
+      </motion.div>
 
-      <div className="absolute right-24 top-220 max-lg:right-4 max-lg:top-10">
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="absolute right-24 top-220 max-lg:right-4 max-lg:top-10"
+      >
         <div className="w-10 h-4 bg-lime-400 rotate-45 mb-3"></div>
         <div className="w-10 h-4 bg-lime-400 rotate-45"></div>
-      </div>
+      </motion.div>
 
       <div className="max-w-[1400px] mx-auto px-10 max-lg:px-5">
 
         {/* Small label */}
-        <div className="flex items-center gap-4 text-gray-400 mb-6 max-lg:mb-4">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-4 text-gray-400 mb-6 max-lg:mb-4"
+        >
           <span className="max-lg:text-sm">Excellency Awards</span>
           <div className="w-20 h-[1px] bg-gray-600 max-lg:w-12"></div>
-        </div>
+        </motion.div>
 
         {/* Main Heading */}
-        <h2 className="text-[110px] font-bold leading-none mb-24 whitespace-nowrap
-        max-lg:text-[34px] max-lg:mb-12 max-lg:whitespace-normal">
+        <motion.h2
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-[110px] font-bold leading-none mb-24 whitespace-nowrap
+        max-lg:text-[34px] max-lg:mb-12 max-lg:whitespace-normal"
+        >
           Awards & Recognitions
-        </h2>
+        </motion.h2>
 
         {/* Grid */}
         <div className="grid grid-cols-2 gap-x-24 gap-y-24
@@ -47,9 +75,14 @@ export default function AwardsSection() {
           {/* LEFT COLUMN */}
           <div className="space-y-24 max-lg:space-y-12">
 
-            {/* 2024 */}
-            <div className="group flex items-start gap-10 border-r border-gray-800 pr-16
-            max-lg:border-none max-lg:pr-0 max-lg:gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-10 border-r border-gray-800 pr-16
+            max-lg:border-none max-lg:pr-0 max-lg:gap-6"
+            >
 
               <div className="text-[80px] font-bold text-gray-700 rotate-[-90deg] group-hover:text-[#C9F31D] transition
               max-lg:text-[40px] max-lg:rotate-0">
@@ -74,11 +107,16 @@ export default function AwardsSection() {
                   in creating engaging user interactions.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* 2022 */}
-            <div className="group flex items-start gap-10 border-r border-gray-800 pr-16
-            max-lg:border-none max-lg:pr-0 max-lg:gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-10 border-r border-gray-800 pr-16
+            max-lg:border-none max-lg:pr-0 max-lg:gap-6"
+            >
 
               <div className="text-[80px] font-bold text-gray-700 rotate-[-90deg] group-hover:text-[#C9F31D] transition
               max-lg:text-[40px] max-lg:rotate-0">
@@ -103,15 +141,20 @@ export default function AwardsSection() {
                   recognized for creativity and skill.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 
           {/* RIGHT COLUMN */}
           <div className="space-y-24 max-lg:space-y-12">
 
-            {/* 2023 */}
-            <div className="group flex items-start gap-10 max-lg:gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-10 max-lg:gap-6"
+            >
 
               <div className="text-[80px] font-bold text-gray-700 rotate-[-90deg] group-hover:text-[#C9F31D] transition
               max-lg:text-[40px] max-lg:rotate-0">
@@ -137,10 +180,15 @@ export default function AwardsSection() {
                   competition, highlighting innovation.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* 2021 */}
-            <div className="group flex items-start gap-10 max-lg:gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-10 max-lg:gap-6"
+            >
 
               <div className="text-[80px] font-bold text-gray-700 rotate-[-90deg] group-hover:text-[#C9F31D] transition
               max-lg:text-[40px] max-lg:rotate-0">
@@ -166,7 +214,7 @@ export default function AwardsSection() {
                   dynamic and engaging interactions.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 

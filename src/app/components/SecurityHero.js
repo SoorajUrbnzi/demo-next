@@ -1,6 +1,8 @@
 "use client";
 
-export default function SecurityHero() {
+import { motion } from "framer-motion";
+
+export default function EthicalHeader() {
   return (
     <main className="relative h-screen overflow-hidden bg-[#0a0a0a] text-white">
 
@@ -32,7 +34,12 @@ export default function SecurityHero() {
       />
 
       {/* RIGHT ROTATING CIRCLE */}
-      <div className="
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, rotate: -20 }}
+        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+        className="
         absolute right-[120px] top-1/2 -translate-y-1/2 w-[200px] h-[200px] flex items-center justify-center
 
         /* ✅ MOBILE ONLY */
@@ -42,7 +49,8 @@ export default function SecurityHero() {
         max-lg:translate-y-0
         max-lg:w-[130px]
         max-lg:h-[130px]
-      ">
+      "
+      >
 
         {/* BLACK BG */}
         <div className="absolute w-full h-full bg-black rounded-full"></div>
@@ -82,7 +90,7 @@ export default function SecurityHero() {
           <div className="w-3 h-3 bg-black"></div>
         </div>
 
-      </div>
+      </motion.div>
 
       {/* CONTENT */}
       <div className="
@@ -94,40 +102,64 @@ export default function SecurityHero() {
       ">
 
         {/* INTRO */}
-        <div className="flex items-center gap-6 text-gray-300 text-sm mt-20 max-lg:mt-6">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-6 text-gray-300 text-sm mt-20 max-lg:mt-6"
+        >
           <span>Detail Presentation</span>
           <div className="w-[120px] h-[1px] bg-gray-600 max-lg:w-[60px]"></div>
-        </div>
+        </motion.div>
 
         {/* TITLE */}
         <div className="relative mt-0 h-[220px] max-lg:h-auto">
 
-          <h1 className="mb-20 text-[160px] font-extrabold leading-[1] tracking-tight
-          max-lg:text-[56px] max-lg:mb-2">
+          <motion.h1
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-20 text-[160px] font-extrabold leading-[1] tracking-tight
+          max-lg:text-[56px] max-lg:mb-2"
+          >
             Project
-          </h1>
+          </motion.h1>
 
-          <h1 className="
+          <motion.h1
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="
             absolute left-[380px] top-[190px] text-[160px]
 
             /* ✅ MOBILE ONLY */
             max-lg:static
             max-lg:text-[56px]
             max-lg:mt-2
-          font-extrabold leading-[0.85] tracking-tight">
+          font-extrabold leading-[0.85] tracking-tight"
+          >
             Details
-          </h1>
+          </motion.h1>
 
         </div>
 
         {/* CIRCLES */}
-        <div className="
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="
           flex absolute items-center circles-move
 
           /* ✅ MOBILE ONLY */
           max-lg:relative
           max-lg:mt-6
-        ">
+        "
+        >
 
           <div className="flex">
             <div className="w-[74px] h-[74px] border border-lime-400 rounded-full
@@ -142,7 +174,7 @@ export default function SecurityHero() {
 
           <div className="ml-0 w-[150px] h-[1px] bg-gray-600 max-lg:w-[80px]"></div>
 
-        </div>
+        </motion.div>
 
       </div>
 

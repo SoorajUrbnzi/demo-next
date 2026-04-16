@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function AboutCase() {
   return (
@@ -6,7 +9,12 @@ export default function AboutCase() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         
         {/* LEFT SIDE */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           {/* Small Heading */}
           <div className="flex items-center gap-4 mb-6">
             <h4 className="text-gray-400 text-sm md:text-base uppercase tracking-widest">
@@ -77,16 +85,22 @@ export default function AboutCase() {
             </div>
 
           </div>
-        </div>
+        </motion.div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="w-full h-[320px] sm:h-[420px] md:w-[500px] md:h-[700px]">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="w-full h-[320px] sm:h-[420px] md:w-[500px] md:h-[700px]"
+        >
           <img
             src="/shield key.jpg"
             alt="About"
             className="w-full h-full object-center object-cover"
           />
-        </div>
+        </motion.div>
 
       </div>
     </section>

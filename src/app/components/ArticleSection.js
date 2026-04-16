@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const posts = [
   {
@@ -27,26 +30,42 @@ export default function ArticleSection() {
       <div className="max-w-7xl mx-auto px-6 max-lg:px-4">
 
         {/* top label */}
-        <div className="flex items-center gap-4 mb-4">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-4 mb-4"
+        >
           <p className="text-gray-400 text-sm tracking-wide max-lg:text-xs">
             Blog & Articles
           </p>
           <div className="h-[1px] bg-gray-700 w-24 max-lg:w-14"></div>
-        </div>
+        </motion.div>
 
         {/* title */}
-        <h2 className="text-5xl md:text-6xl font-bold mb-16 
-        max-lg:text-3xl max-lg:mb-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-5xl md:text-6xl font-bold mb-16 
+        max-lg:text-3xl max-lg:mb-10"
+        >
           Latest Articles
-        </h2>
+        </motion.h2>
 
         {/* grid */}
         <div className="grid md:grid-cols-3 gap-8 
         max-lg:grid-cols-1 max-lg:gap-6">
 
           {posts.map((post, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: index * 0.15 }}
+              viewport={{ once: true }}
               className="group border border-gray-800 p-6 hover:border-gray-600 hover:bg-lime-400 hover:text-black transition-all duration-300
               max-lg:p-4"
             >
@@ -83,13 +102,19 @@ export default function ArticleSection() {
                 </div>
               </div>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>
 
         {/* VIEW ALL BUTTON */}
-        <div className="flex justify-center mt-16 max-lg:mt-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-16 max-lg:mt-10"
+        >
           <div className="group relative w-36 h-36 flex items-center justify-center rounded-full border border-gray-600 cursor-pointer overflow-hidden
           max-lg:w-24 max-lg:h-24">
 
@@ -104,7 +129,7 @@ export default function ArticleSection() {
             max-lg:w-8 max-lg:h-8"></div>
 
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -1,13 +1,27 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function InteractionPage() {
   return (
     <section className="bg-black text-white py-16 md:py-24 px-5 md:px-10">
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16"
+      >
 
         {/* ================= LEFT CONTENT ================= */}
-        <div className="lg:col-span-2">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="lg:col-span-2"
+        >
 
           {/* Top Meta */}
           <div className="flex flex-wrap items-center gap-4 md:gap-6 text-gray-400 mb-6 text-sm">
@@ -20,42 +34,41 @@ export default function InteractionPage() {
             10 UI Interactions & Marketing Tips
           </h1>
 
-          {/* Divider */}
           <div className="w-full h-[1px] bg-gray-800 mb-6 md:mb-8"></div>
 
-          {/* Paragraph 1 */}
           <p className="text-gray-400 leading-relaxed mb-6 md:mb-8 max-w-3xl text-sm sm:text-base">
             Choosing Pentos means choosing a partner who is dedicated to your success.
             Our passion for what we do, combined with our expertise and innovative approach,
-            sets us apart from the competition. We are not just service providers; we are
-            problem solvers, innovators, and collaborators who are deeply invested in helping
-            you achieve your vision.
+            sets us apart from the competition.
           </p>
 
-          {/* Paragraph 2 */}
           <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-4xl mb-8 md:mb-10">
             Founded on the principles of creativity, integrity, and results, Dxtree is
-            comprised of a diverse team of expert in digital marketing, web development,
-            UX/UI design, branding, and more. Our team brings together a wealth of experience
-            and a deep understanding of the latest trends and technologies to deliver
-            cutting-edge solutions tailored to your unique needs.
+            comprised of a diverse team of expert in digital marketing.
           </p>
 
-          {/* BIG IMAGE */}
           <img
             src="/SERVER VAPT.jpg"
             alt="Blog Image"
             className="w-full h-[240px] sm:h-[320px] md:h-[420px] object-cover"
           />
 
-        </div>
+        </motion.div>
 
         {/* ================= RIGHT SIDEBAR ================= */}
-        <div className="space-y-6 md:space-y-10">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="space-y-6 md:space-y-10"
+        >
 
           {/* SUBSCRIBE */}
           <div className="bg-[#0d0d0d] p-5 md:p-8 border border-gray-800">
-            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">Subscribe</h3>
+            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
+              Subscribe
+            </h3>
 
             <div className="flex items-center justify-between border-b border-gray-700 pb-3">
               <input
@@ -71,7 +84,9 @@ export default function InteractionPage() {
 
           {/* SERVICES */}
           <div className="bg-[#0d0d0d] p-5 md:p-8 border border-gray-800">
-            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">Services</h3>
+            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
+              Services
+            </h3>
 
             <div className="space-y-4 md:space-y-5">
               {[
@@ -93,7 +108,9 @@ export default function InteractionPage() {
 
           {/* INSTAGRAM */}
           <div className="bg-[#0d0d0d] p-5 md:p-8 border border-gray-800">
-            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">Instagram</h3>
+            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
+              Instagram
+            </h3>
 
             <div className="grid grid-cols-3 gap-3 md:gap-4">
               <img src="/simultaneous.jpg" className="w-full h-20 md:h-24 object-cover" />
@@ -105,14 +122,19 @@ export default function InteractionPage() {
             </div>
           </div>
 
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
       {/* ================= SUCCESS JOURNEY ================= */}
-      <div className="max-w-7xl mx-auto mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16">
+      <motion.div
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16"
+      >
 
-        {/* LEFT */}
         <div className="lg:col-span-2">
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 md:gap-6 mb-8 md:mb-10">
@@ -130,8 +152,8 @@ export default function InteractionPage() {
             </h3>
 
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li>• We ensure your business gets noticed by optimizing your presence on search engines and social media.</li>
-              <li>• Through engaging digital experiences, we enhance user satisfaction and growth.</li>
+              <li>• We ensure your business gets noticed.</li>
+              <li>• We enhance user experience and growth.</li>
             </ul>
           </div>
 
@@ -141,19 +163,17 @@ export default function InteractionPage() {
             </h3>
 
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li>• Our goal is to help you build standout products in the digital space.</li>
-              <li>• We craft strategies tailored to your unique business needs.</li>
+              <li>• We build standout digital products.</li>
+              <li>• We craft tailored strategies.</li>
             </ul>
           </div>
 
           <p className="text-gray-400 max-w-4xl text-sm md:text-base">
-            We believe in the power of clear, strategic thinking. By collaborating closely with you,
-            we define your brand’s mission, vision, and values.
+            We collaborate closely to define your brand vision and mission.
           </p>
 
         </div>
 
-        {/* RIGHT CONTACT BOX */}
         <div className="bg-gradient-to-br from-black to-lime-900 p-6 md:p-10 rounded-lg text-center h-auto md:h-80">
 
           <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
@@ -174,7 +194,7 @@ export default function InteractionPage() {
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function WorkProcessSection() {
   return (
@@ -12,7 +15,13 @@ export default function WorkProcessSection() {
       <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* HEADER */}
-        <div className="mb-12 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-12 md:mb-16"
+        >
           <div className="flex items-center gap-4 mb-5 md:mb-6">
             <h4 className="text-gray-400 text-sm md:text-base font-medium">
               My Linear Process
@@ -23,13 +32,19 @@ export default function WorkProcessSection() {
           <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold">
             Work Process
           </h1>
-        </div>
+        </motion.div>
 
         {/* CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
           
           {/* CARD 1 */}
-          <div className="border border-gray-800 p-6 md:p-10 hover:bg-black transition duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="border border-gray-800 p-6 md:p-10 hover:bg-black transition duration-300"
+          >
             <div className="mb-5 md:mb-6 text-lime-400">
               <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="6" strokeWidth="1" />
@@ -44,10 +59,16 @@ export default function WorkProcessSection() {
               target audience. Through in-depth research and analysis, we gather
               valuable insights that inform.
             </p>
-          </div>
+          </motion.div>
 
           {/* CARD 2 */}
-          <div className="border border-gray-800 p-6 md:p-10 bg-[#070707] hover:bg-black transition duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="border border-gray-800 p-6 md:p-10 bg-[#070707] hover:bg-black transition duration-300"
+          >
             <div className="mb-5 md:mb-6 text-lime-400">
               <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <rect x="4" y="6" width="16" height="3" strokeWidth="1" />
@@ -63,10 +84,16 @@ export default function WorkProcessSection() {
               detailed project plan. This includes setting clear goals,
               defining key performance indicators,
             </p>
-          </div>
+          </motion.div>
 
           {/* CARD 3 */}
-          <div className="border border-gray-800 p-6 md:p-10 hover:bg-black transition duration-300">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="border border-gray-800 p-6 md:p-10 hover:bg-black transition duration-300"
+          >
             <div className="mb-5 md:mb-6 text-lime-400">
               <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <polygon
@@ -83,7 +110,7 @@ export default function WorkProcessSection() {
               in-depth research and analysis, we gather valuable feedback that
               shapes the output.
             </p>
-          </div>
+          </motion.div>
 
         </div>
       </div>

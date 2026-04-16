@@ -1,5 +1,11 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
 
 export default function ContactHeader() {
 
@@ -36,30 +42,51 @@ export default function ContactHeader() {
   return (
     <section className="bg-black text-white py-16 md:py-28 px-4 md:px-10">
 
-      <div className="max-w-7xl mx-auto">
+      {/* HEADER */}
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.15 }}
+        className="max-w-7xl mx-auto"
+      >
 
-        {/* SMALL TITLE */}
-        <div className="flex items-center gap-4 md:gap-6 mb-6 md:mb-10">
+        <motion.div variants={fadeUp} transition={{ duration: 0.6 }}
+          className="flex items-center gap-4 md:gap-6 mb-6 md:mb-10"
+        >
           <p className="text-gray-400 text-sm md:text-lg font-medium">
             Estimate Your Project
           </p>
 
           <div className="w-16 md:w-24 h-[1px] bg-gray-700"></div>
-        </div>
+        </motion.div>
 
-        {/* MAIN HEADING */}
-        <h1 className="text-[42px] sm:text-[60px] md:text-[120px] font-bold leading-none text-gray-200">
+        <motion.h1
+          variants={fadeUp}
+          transition={{ duration: 0.7 }}
+          className="text-[42px] sm:text-[60px] md:text-[120px] font-bold leading-none text-gray-200"
+        >
           Get in touch
-        </h1>
+        </motion.h1>
 
-      </div>
+      </motion.div>
 
 
-      {/* ================= CONTACT FORM SECTION ================= */}
-      <div className="max-w-7xl mx-auto mt-12 md:mt-24 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+      {/* FORM SECTION */}
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ staggerChildren: 0.15 }}
+        className="max-w-7xl mx-auto mt-12 md:mt-24 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16"
+      >
 
         {/* LEFT - COMPANY INFO */}
-        <div className="bg-[#0d0d0d] p-6 md:p-12 border border-gray-800">
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+          className="bg-[#0d0d0d] p-6 md:p-12 border border-gray-800"
+        >
 
           <h2 className="text-2xl md:text-3xl font-semibold mb-6 md:mb-10">
             Company Info
@@ -86,63 +113,44 @@ export default function ContactHeader() {
             </div>
 
           </div>
-        </div>
+        </motion.div>
 
 
         {/* RIGHT - FORM */}
-        <div>
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+        >
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-8 md:mb-10">
 
-            <div>
-              <label className="block mb-2 md:mb-3 text-base md:text-lg">First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                value={form.firstName}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b border-gray-700 outline-none py-2"
-              />
-            </div>
+            {["firstName", "lastName", "email", "phone"].map((field, i) => (
+              <motion.div key={i} variants={fadeUp}>
+                <label className="block mb-2 md:mb-3 text-base md:text-lg capitalize">
+                  {field === "firstName"
+                    ? "First Name"
+                    : field === "lastName"
+                    ? "Last Name"
+                    : field === "email"
+                    ? "Email"
+                    : "Phone Number"}
+                </label>
 
-            <div>
-              <label className="block mb-2 md:mb-3 text-base md:text-lg">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                value={form.lastName}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b border-gray-700 outline-none py-2"
-              />
-            </div>
-
-            <div>
-              <label className="block mb-2 md:mb-3 text-base md:text-lg">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Enter Your Email"
-                className="w-full bg-transparent border-b border-gray-700 outline-none py-2 text-gray-400"
-              />
-            </div>
-
-            <div>
-              <label className="block mb-2 md:mb-3 text-base md:text-lg">Phone Number</label>
-              <input
-                type="text"
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                className="w-full bg-transparent border-b border-gray-700 outline-none py-2"
-              />
-            </div>
+                <input
+                  type="text"
+                  name={field}
+                  value={form[field]}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-gray-700 outline-none py-2"
+                />
+              </motion.div>
+            ))}
 
           </div>
 
-          <div className="mb-8 md:mb-12">
+          <motion.div variants={fadeUp} className="mb-8 md:mb-12">
             <label className="block mb-2 md:mb-3 text-base md:text-lg">Message</label>
+
             <textarea
               name="message"
               value={form.message}
@@ -150,18 +158,19 @@ export default function ContactHeader() {
               placeholder="Write here...."
               className="w-full bg-transparent border-b border-gray-700 outline-none py-2 h-24 text-gray-400"
             />
-          </div>
+          </motion.div>
 
-          <button
+          <motion.button
+            variants={fadeUp}
             onClick={handleSubmit}
             className="bg-lime-400 text-black px-6 md:px-10 py-3 md:py-4 text-sm md:text-base font-semibold flex items-center gap-2 hover:scale-105 transition"
           >
             {submitted ? "THANK YOU" : "SEND MESSAGE ↗"}
-          </button>
+          </motion.button>
 
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

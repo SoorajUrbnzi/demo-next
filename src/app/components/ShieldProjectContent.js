@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ShieldProjectContent() {
 
@@ -10,7 +11,13 @@ export default function ShieldProjectContent() {
     max-lg:py-16 max-lg:px-5">
 
       {/* ================= TOP HEADER ================= */}
-      <div className="max-w-7xl mx-auto mb-20 max-lg:mb-12">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto mb-20 max-lg:mb-12"
+      >
 
         <p className="text-gray-400 mb-3">Technology</p>
 
@@ -26,24 +33,35 @@ export default function ShieldProjectContent() {
           We understand that a brand is a powerful reflection of your business’s soul...
         </p>
 
-      </div>
+      </motion.div>
 
       {/* ================= MAIN GRID ================= */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-20 
       max-lg:gap-12">
 
         {/* ===== LEFT IMAGE ===== */}
-        <div className="flex justify-center lg:block">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex justify-center lg:block"
+        >
           <img
             src="/shield key.jpg"
             alt="Shield Key"
             className="w-full max-w-md h-[580px] object-cover 
             max-lg:h-[300px]"
           />
-        </div>
+        </motion.div>
 
         {/* ===== MIDDLE CONTENT ===== */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <p className="text-gray-400 mb-6 leading-relaxed mt-40 
           max-lg:mt-0 max-lg:text-sm">
             From there, we help you create a brand identity...
@@ -70,10 +88,16 @@ export default function ShieldProjectContent() {
               Web Development
             </li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* ===== RIGHT SIDEBAR ===== */}
-        <div className="space-y-8 max-lg:space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="space-y-8 max-lg:space-y-6"
+        >
 
           {/* PROJECT INFO */}
           <div className="bg-[#111] p-8 rounded-lg border border-gray-800 
@@ -126,23 +150,35 @@ export default function ShieldProjectContent() {
             </p>
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
 
       {/* ================= BOTTOM TEXT ================= */}
-      <div className="max-w-7xl mx-auto mt-20 max-lg:mt-12">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto mt-20 max-lg:mt-12"
+      >
 
         <p className="text-gray-400 max-w-4xl leading-relaxed 
         max-lg:text-sm">
           We work alongside you to dig deep into your business goals...
         </p>
 
-      </div>
+      </motion.div>
 
       {/* ================= FAQ SECTION ================= */}
-      <div className="max-w-7xl mx-auto mt-24 border-t border-gray-800 pt-16 
-      max-lg:mt-16 max-lg:pt-10">
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto mt-24 border-t border-gray-800 pt-16 
+        max-lg:mt-16 max-lg:pt-10"
+      >
 
         {[...Array(5)].map((_, index) => {
 
@@ -230,7 +266,7 @@ export default function ShieldProjectContent() {
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

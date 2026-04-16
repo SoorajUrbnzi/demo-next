@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function ServicesSection() {
 
   const services = [
@@ -28,23 +31,39 @@ export default function ServicesSection() {
       <div className="max-w-6xl mx-auto">
 
         {/* small label */}
-        <div className="flex items-center gap-4 lg:gap-5 mb-4 lg:mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-4 lg:gap-5 mb-4 lg:mb-6"
+        >
           <span className="text-gray-400 text-xs lg:text-sm uppercase tracking-widest">
             Services
           </span>
           <div className="w-10 lg:w-16 h-[1px] bg-gray-600"></div>
-        </div>
+        </motion.div>
 
         {/* title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-[72px] font-bold mb-4 lg:mb-0">
+        <motion.h2
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-3xl sm:text-4xl lg:text-[72px] font-bold mb-4 lg:mb-0"
+        >
           Expertise Solutions
-        </h2>
+        </motion.h2>
 
         {/* services list */}
         <div>
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="group relative flex items-center justify-between py-6 lg:py-10 border-b border-gray-800 hover:border-gray-600 transition"
             >
 
@@ -66,7 +85,7 @@ export default function ServicesSection() {
                 ↗
               </div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
 

@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion";
+
 export default function ServicesSection() {
 
   const services = [
@@ -28,24 +32,40 @@ export default function ServicesSection() {
       <div className="max-w-6xl mx-auto">
 
         {/* small label */}
-        <div className="flex items-center gap-5 mb-6 max-lg:gap-3 max-lg:mb-4">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-5 mb-6 max-lg:gap-3 max-lg:mb-4"
+        >
           <span className="text-gray-400 text-sm uppercase tracking-widest mb-0 max-lg:text-xs">
             Services
           </span>
           <div className="w-16 h-[1px] bg-gray-600 mb-0 max-lg:w-10"></div>
-        </div>
+        </motion.div>
 
         {/* title */}
-        <h2 className="text-[72px] font-bold mb-0 max-lg:text-[32px] max-lg:leading-[40px]">
+        <motion.h2
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-[72px] font-bold mb-0 max-lg:text-[32px] max-lg:leading-[40px]"
+        >
           Expertise Solutions
-        </h2>
+        </motion.h2>
 
         {/* services list */}
         <div>
 
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="group relative flex items-center justify-between py-10 mt-0 border-b border-gray-800 hover:border-gray-600 transition max-lg:py-6"
             >
 
@@ -67,7 +87,7 @@ export default function ServicesSection() {
                 ↗
               </div>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>

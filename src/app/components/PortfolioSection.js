@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion";
+
 export default function PortfolioSection() {
 
   const projects = [
@@ -23,21 +27,31 @@ export default function PortfolioSection() {
     <section className="bg-black text-white py-28 max-lg:py-16">
 
       {/* TITLE */}
-      <div className="text-center mb-20 max-lg:mb-10">
+      <motion.div
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center mb-20 max-lg:mb-10"
+      >
         <h2 className="text-[180px] font-bold flex justify-center items-center gap-4 
         max-lg:text-[48px] max-lg:gap-2">
           PORTFOLIO
           <span className="text-lime-400 text-[120px] max-lg:text-[40px]">✦</span>
         </h2>
-      </div>
+      </motion.div>
 
       {/* GRID */}
       <div className="max-w-7xl mx-auto grid grid-cols-2 gap-10 
       max-lg:grid-cols-1 max-lg:gap-6 max-lg:px-4">
 
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: index * 0.15 }}
+            viewport={{ once: true }}
             className={`relative group overflow-hidden ${index % 2 !== 0 ? "mt-13" : ""} 
             max-lg:mt-0`}
           >
@@ -73,13 +87,19 @@ export default function PortfolioSection() {
 
             </div>
 
-          </div>
+          </motion.div>
         ))}
 
       </div>
 
       {/* ALL PROJECTS BUTTON */}
-      <div className="flex justify-center mt-32 max-lg:mt-16">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="flex justify-center mt-32 max-lg:mt-16"
+      >
 
         <div className="relative group w-[130px] h-[130px] rounded-full border border-gray-700 flex items-center justify-center cursor-pointer overflow-hidden
         max-lg:w-[90px] max-lg:h-[90px]">
@@ -94,7 +114,7 @@ export default function PortfolioSection() {
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

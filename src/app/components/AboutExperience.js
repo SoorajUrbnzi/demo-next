@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function ExperienceSection() {
   return (
@@ -10,7 +12,13 @@ export default function ExperienceSection() {
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}
-        <div className="mb-12 md:mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-12 md:mb-20"
+        >
           <div className="flex items-center gap-4 mb-5 md:mb-6">
             <h4 className="text-gray-400 text-xs md:text-sm tracking-widest">
               Teams I Worked With
@@ -22,7 +30,7 @@ export default function ExperienceSection() {
             My Professional <br />
             Experiences
           </h1>
-        </div>
+        </motion.div>
 
         {/* TIMELINE */}
         <div className="relative">
@@ -66,7 +74,15 @@ export default function ExperienceSection() {
                 text: "text-white"
               }
             ].map((item, i) => (
-              <div key={i} className="relative flex items-start md:items-center">
+              
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="relative flex items-start md:items-center"
+              >
 
                 {/* DOT */}
                 <div className="absolute left-4 md:left-6 transform -translate-x-1/2">
@@ -110,7 +126,7 @@ export default function ExperienceSection() {
                   </div>
 
                 </div>
-              </div>
+              </motion.div>
             ))}
 
           </div>

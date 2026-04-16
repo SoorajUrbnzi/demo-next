@@ -1,30 +1,43 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function SmartPage() {
   return (
     <section className="bg-black text-white py-16 md:py-24 px-4 md:px-10">
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ staggerChildren: 0.12 }}
+        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16"
+      >
 
         {/* ================= LEFT CONTENT ================= */}
-        <div className="lg:col-span-2">
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+          className="lg:col-span-2"
+        >
 
-          {/* Top Meta */}
           <div className="flex flex-wrap items-center gap-4 md:gap-6 text-gray-400 mb-6 text-sm">
             <span>📁 Design</span>
             <span>📅 Aug 13, 2024</span>
           </div>
 
-          {/* Title */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6 md:mb-8">
             10 UI Improvements & Cool <br className="hidden md:block" />
             Marketing Hacks
           </h1>
 
-          {/* Divider */}
           <div className="w-full h-[1px] bg-gray-800 mb-6 md:mb-8"></div>
 
-          {/* Paragraph 1 */}
           <p className="text-gray-400 leading-relaxed mb-6 md:mb-8 max-w-3xl text-sm md:text-base">
             Choosing Pentos means choosing a partner who is dedicated to your success.
             Our passion for what we do, combined with our expertise and innovative approach,
@@ -33,7 +46,6 @@ export default function SmartPage() {
             you achieve your vision.
           </p>
 
-          {/* Paragraph 2 */}
           <p className="text-gray-300 text-base md:text-xl leading-relaxed max-w-4xl mb-8 md:mb-10">
             Founded on the principles of creativity, integrity, and results, Dxtree is
             comprised of a diverse team of expert in digital marketing, web development,
@@ -42,19 +54,20 @@ export default function SmartPage() {
             cutting-edge solutions tailored to your unique needs.
           </p>
 
-          {/* BIG IMAGE */}
           <img
             src="/SERVER VAPT.jpg"
             alt="Blog Image"
             className="w-full h-[240px] sm:h-[300px] md:h-[420px] object-cover"
           />
-
-        </div>
+        </motion.div>
 
         {/* ================= RIGHT SIDEBAR ================= */}
-        <div className="space-y-6 md:space-y-10">
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+          className="space-y-6 md:space-y-10"
+        >
 
-          {/* SUBSCRIBE */}
           <div className="bg-[#0d0d0d] p-5 md:p-8 border border-gray-800">
             <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Subscribe</h3>
 
@@ -70,7 +83,6 @@ export default function SmartPage() {
             </div>
           </div>
 
-          {/* SERVICES */}
           <div className="bg-[#0d0d0d] p-5 md:p-8 border border-gray-800">
             <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Services</h3>
 
@@ -92,7 +104,6 @@ export default function SmartPage() {
             </div>
           </div>
 
-          {/* INSTAGRAM */}
           <div className="bg-[#0d0d0d] p-5 md:p-8 border border-gray-800">
             <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Instagram</h3>
 
@@ -106,14 +117,18 @@ export default function SmartPage() {
             </div>
           </div>
 
-        </div>
-
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* ================= SUCCESS JOURNEY ================= */}
-      <div className="max-w-7xl mx-auto mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16"
+      >
 
-        {/* LEFT */}
         <div className="lg:col-span-2">
 
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-10">
@@ -154,7 +169,6 @@ export default function SmartPage() {
 
         </div>
 
-        {/* RIGHT CONTACT BOX */}
         <div className="bg-gradient-to-br from-black to-lime-900 p-6 md:p-10 rounded-lg text-center h-auto md:h-80">
 
           <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">
@@ -165,17 +179,12 @@ export default function SmartPage() {
             📞
           </div>
 
-          <p className="text-white font-medium">
-            09 : 00 AM - 10 : 30 PM
-          </p>
-
-          <p className="text-gray-300 text-sm">
-            Saturday - Thursday
-          </p>
+          <p className="text-white font-medium">09 : 00 AM - 10 : 30 PM</p>
+          <p className="text-gray-300 text-sm">Saturday - Thursday</p>
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

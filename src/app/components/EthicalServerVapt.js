@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function EthicalServerVapt() {
   return (
     <section
@@ -12,22 +16,34 @@ export default function EthicalServerVapt() {
       }}
     >
       {/* Overlay */}
-      <div className="
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="
         w-full h-full bg-black/20 flex items-center justify-center
 
         /* ✅ MOBILE FIX */
         max-lg:px-4
         max-lg:text-center
-      ">
-        <h1 className="
+      "
+      >
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="
           text-white text-5xl font-bold
 
           /* ✅ MOBILE FIX */
           max-lg:text-2xl
-        ">
+        "
+        >
           
-        </h1>
-      </div>
+        </motion.h1>
+      </motion.div>
     </section>
   );
 }

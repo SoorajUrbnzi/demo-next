@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function TechStackSection() {
   return (
@@ -6,7 +8,12 @@ export default function TechStackSection() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
         {/* LEFT SIDE */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <div className="flex items-center gap-4 mb-6">
             <h4 className="text-gray-400 text-xs md:text-sm tracking-widest">
               Professional Skills
@@ -44,10 +51,16 @@ export default function TechStackSection() {
             </span>
             <div className="absolute bottom-0 left-0 w-8 h-8 md:w-14 md:h-14 bg-lime-400 rounded-tr-full transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:rounded-full"></div>
           </div>
-        </div>
+        </motion.div>
 
         {/* RIGHT SIDE */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 md:gap-10 justify-items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 sm:grid-cols-3 gap-5 md:gap-10 justify-items-center"
+        >
 
           {[
             { color: "bg-orange-500", label: "Biffco", letter: "U", text: "text-black" },
@@ -57,8 +70,12 @@ export default function TechStackSection() {
             { color: "bg-lime-300", label: "Kahuna", letter: "K", text: "text-black" },
             { color: "bg-red-900", label: "Kinford", letter: "K", text: "text-white" },
           ].map((item, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              viewport={{ once: true }}
               className="w-[110px] h-[150px] md:w-[140px] md:h-[180px] rounded-[60px] md:rounded-[80px] bg-[#0a0a0a] flex flex-col items-center justify-center border border-transparent hover:border-lime-400 transition duration-300"
             >
               <div className={`w-12 h-12 md:w-14 md:h-14 ${item.color} flex items-center justify-center mb-3 md:mb-4`}>
@@ -67,10 +84,10 @@ export default function TechStackSection() {
                 </span>
               </div>
               <p className="text-xs md:text-sm">{item.label}</p>
-            </div>
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

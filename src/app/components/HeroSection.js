@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
     <main className="relative min-h-screen lg:h-screen overflow-hidden lg:overflow-visible bg-[#0a0a0a] text-white">
@@ -43,17 +45,29 @@ export default function Home() {
       <div className="relative z-10 px-4 sm:px-10 lg:pl-[180px] pt-16 sm:pt-24 lg:pt-[120px]">
 
         {/* INTRO */}
-        <div className="flex items-center gap-3 sm:gap-6 text-gray-300 text-[11px] sm:text-sm">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-3 sm:gap-6 text-gray-300 text-[11px] sm:text-sm"
+        >
           <span>Hey There! Albert Wilson Here</span>
           <div className="w-[40px] sm:w-[100px] h-[1px] bg-gray-600"></div>
-        </div>
+        </motion.div>
 
         {/* TITLE */}
         <div className="relative mt-4 lg:mt-0 lg:h-[220px]">
 
-          <h1 className="mb-4 sm:mb-10 lg:mb-20 text-[42px] sm:text-[100px] lg:text-[160px] font-extrabold leading-[1] tracking-tight">
+          <motion.h1
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: true }}
+            className="mb-4 sm:mb-10 lg:mb-20 text-[42px] sm:text-[100px] lg:text-[160px] font-extrabold leading-[1] tracking-tight"
+          >
             DESIGN
-          </h1>
+          </motion.h1>
 
           {/* SPINNING STAR */}
           <div className="absolute left-[75%] sm:left-[60%] lg:left-[700px] top-2 sm:top-6 lg:top-[40px] drop-shadow-[0_0_8px_#c8ff00] star-spin">
@@ -73,15 +87,26 @@ export default function Home() {
             </svg>
           </div>
 
-          <h1 className="lg:absolute lg:left-[400px] lg:top-[200px] text-[42px] sm:text-[100px] lg:text-[160px] font-extrabold leading-[0.9] lg:leading-[0.85] tracking-tight">
+          <motion.h1
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="lg:absolute lg:left-[400px] lg:top-[200px] text-[42px] sm:text-[100px] lg:text-[160px] font-extrabold leading-[0.9] lg:leading-[0.85] tracking-tight"
+          >
             PARTNER
-          </h1>
+          </motion.h1>
 
         </div>
 
         {/* CIRCLES */}
-        <div className="flex items-center mt-4 sm:mt-8 lg:absolute circles-move">
-
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex items-center mt-4 sm:mt-8 lg:absolute circles-move"
+        >
           <div className="flex">
             <div className="w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] lg:w-[74px] lg:h-[74px] border border-lime-400 rounded-full"></div>
             <div className="w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] lg:w-[74px] lg:h-[74px] border border-lime-400 rounded-full -ml-2 sm:-ml-4"></div>
@@ -89,24 +114,32 @@ export default function Home() {
           </div>
 
           <div className="ml-2 sm:ml-4 w-[60px] sm:w-[120px] lg:w-[150px] h-[1px] bg-gray-600"></div>
-
-        </div>
+        </motion.div>
 
         {/* TEXT */}
-        <p className="mt-6 sm:mt-12 lg:mt-[150px] text-gray-300 leading-relaxed max-w-full sm:max-w-[520px] text-[13px] sm:text-base">
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-6 sm:mt-12 lg:mt-[150px] text-gray-300 leading-relaxed max-w-full sm:max-w-[520px] text-[13px] sm:text-base"
+        >
           I believe in the power of innovation and creativity to transform your
           ideas into exceptional digital experiences. Working closely with you,
           I strive to bring your vision to life.
-        </p>
+        </motion.p>
 
         {/* BUTTON */}
-        <button className="relative w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[120px] lg:h-[120px] rounded-full border border-gray-600 flex items-center justify-center text-[10px] sm:text-sm tracking-wide transition-all duration-300 hover:bg-lime-400 hover:text-black hover:border-lime-400 mt-6 sm:mt-14 lg:mt-20">
-
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="relative w-[70px] h-[70px] sm:w-[110px] sm:h-[110px] lg:w-[120px] lg:h-[120px] rounded-full border border-gray-600 flex items-center justify-center text-[10px] sm:text-sm tracking-wide transition-all duration-300 hover:bg-lime-400 hover:text-black hover:border-lime-400 mt-6 sm:mt-14 lg:mt-20"
+        >
           ABOUT ME ↗
-
           <span className="absolute bottom-1.5 left-2.5 sm:bottom-3 sm:left-4 w-3 h-3 sm:w-5 sm:h-5 bg-lime-400 rounded-full"></span>
-
-        </button>
+        </motion.button>
 
       </div>
     </main>

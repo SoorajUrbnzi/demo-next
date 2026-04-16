@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion";
+
 export default function projectHero() {
   return (
     <main className="relative h-screen bg-[#0a0a0a] text-white overflow-hidden">
@@ -30,8 +34,14 @@ export default function projectHero() {
       />
 
       {/* ROTATING CIRCLE */}
-      <div className="absolute right-[120px] top-1/2 -translate-y-1/2 w-[200px] h-[200px] flex items-center justify-center
-      max-lg:right-6 max-lg:bottom-24 max-lg:top-auto max-lg:w-[110px] max-lg:h-[110px]">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7, rotate: -20 }}
+        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+        className="absolute right-[120px] top-1/2 -translate-y-1/2 w-[200px] h-[200px] flex items-center justify-center
+      max-lg:right-6 max-lg:bottom-24 max-lg:top-auto max-lg:w-[110px] max-lg:h-[110px]"
+      >
 
         <div className="absolute w-full h-full bg-black rounded-full"></div>
 
@@ -54,38 +64,62 @@ export default function projectHero() {
         max-lg:w-7 max-lg:h-7">
           <div className="w-3 h-3 bg-black"></div>
         </div>
-      </div>
+      </motion.div>
 
       {/* CONTENT */}
       <div className="relative z-10 pl-[180px] pt-[120px]
       max-lg:px-6 max-lg:pt-20 max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:h-full">
 
         {/* INTRO */}
-        <div className="flex items-center gap-6 text-gray-300 text-sm mt-20
-        max-lg:mt-0 max-lg:text-xs">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-6 text-gray-300 text-sm mt-20
+        max-lg:mt-0 max-lg:text-xs"
+        >
           <span>Case Studies</span>
           <div className="w-[120px] h-[1px] bg-gray-600 max-lg:w-14"></div>
-        </div>
+        </motion.div>
 
         {/* TITLE */}
         <div className="relative h-[220px] mt-4
         max-lg:h-auto max-lg:mt-6">
 
-          <h1 className="text-[160px] font-extrabold leading-[1]
-          max-lg:text-[52px]">
+          <motion.h1
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-[160px] font-extrabold leading-[1]
+          max-lg:text-[52px]"
+          >
             AMAZING
-          </h1>
+          </motion.h1>
 
-          <h1 className="absolute left-[420px] top-[190px] text-[160px] font-extrabold leading-[0.85]
-          max-lg:static max-lg:text-[52px] max-lg:mt-2">
+          <motion.h1
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="absolute left-[420px] top-[190px] text-[160px] font-extrabold leading-[0.85]
+          max-lg:static max-lg:text-[52px] max-lg:mt-2"
+          >
             WORK
-          </h1>
+          </motion.h1>
 
         </div>
 
         {/* CIRCLES */}
-        <div className="flex absolute items-center
-        max-lg:relative max-lg:mt-6">
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="flex absolute items-center
+        max-lg:relative max-lg:mt-6"
+        >
 
           <div className="flex">
             <div className="w-[74px] h-[74px] border border-lime-400 rounded-full
@@ -97,7 +131,7 @@ export default function projectHero() {
           </div>
 
           <div className="w-[150px] h-[1px] bg-gray-600 max-lg:w-16"></div>
-        </div>
+        </motion.div>
 
       </div>
 

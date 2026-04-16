@@ -1,15 +1,42 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function ServerProjectContent() {
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const refs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    refs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      refs.current.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
 
   return (
     <section className="bg-black text-white py-28 px-10 max-lg:px-6 max-lg:py-16">
 
       {/* ================= TOP HEADER ================= */}
-      <div className="max-w-7xl mx-auto mb-20 max-lg:mb-12">
+      <div
+        ref={(el) => (refs.current[0] = el)}
+        className="scroll-reveal max-w-7xl mx-auto mb-20 max-lg:mb-12"
+      >
 
         <p className="text-gray-400 mb-3">Technology</p>
 
@@ -26,7 +53,10 @@ export default function ServerProjectContent() {
       </div>
 
       {/* ================= MAIN GRID ================= */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-20 max-lg:gap-10">
+      <div
+        ref={(el) => (refs.current[1] = el)}
+        className="scroll-reveal max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-20 max-lg:gap-10"
+      >
 
         {/* ===== LEFT IMAGE ===== */}
         <div className="max-lg:flex max-lg:justify-center">
@@ -69,7 +99,6 @@ export default function ServerProjectContent() {
         {/* ===== RIGHT SIDEBAR ===== */}
         <div className="space-y-8">
 
-          {/* PROJECT INFO */}
           <div className="bg-[#111] p-8 rounded-lg border border-gray-800 max-lg:p-6">
             <h3 className="text-xl font-semibold mb-6 max-lg:text-lg">
               Project Information
@@ -102,7 +131,6 @@ export default function ServerProjectContent() {
             </div>
           </div>
 
-          {/* CONTACT BOX */}
           <div className="bg-gradient-to-br from-black to-lime-900 p-8 rounded-lg text-center max-lg:p-6">
             <h3 className="text-xl font-semibold mb-6 max-lg:text-lg">
               Contact with us for any advice
@@ -122,7 +150,10 @@ export default function ServerProjectContent() {
       </div>
 
       {/* ================= BOTTOM TEXT ================= */}
-      <div className="max-w-7xl mx-auto mt-20 max-lg:mt-12">
+      <div
+        ref={(el) => (refs.current[2] = el)}
+        className="scroll-reveal max-w-7xl mx-auto mt-20 max-lg:mt-12"
+      >
 
         <p className="text-gray-400 max-w-4xl leading-relaxed max-lg:text-sm">
           A successful brand starts with a clear strategy. We work closely with you to understand
@@ -132,64 +163,18 @@ export default function ServerProjectContent() {
 
       </div>
 
-      {/* ================= FAQ SECTION ================= */}
-      <div className="max-w-7xl mx-auto mt-24 border-t border-gray-800 pt-16 max-lg:mt-16 max-lg:pt-10">
+      <style jsx>{`
+        .scroll-reveal {
+          opacity: 0;
+          transform: translateY(60px);
+          transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
 
-        {[/* same array */].map((item, index) => (
-
-          <div key={index}>
-
-            {activeIndex === index ? (
-              <div
-                className="bg-[#0d0d0d] p-8 mb-6 relative cursor-pointer hover:bg-[#0a0a0a] transition max-lg:p-5"
-                onClick={() => setActiveIndex(null)}
-              >
-                <h3 className="text-lime-400 text-xl font-semibold mb-4 max-lg:text-lg">
-                  {item.q}
-                </h3>
-
-                <p className="text-gray-400 leading-relaxed max-w-3xl max-lg:text-sm">
-                  {item.a}
-                </p>
-
-                <span className="absolute top-6 right-6 text-lime-400 text-2xl">
-                  ✕
-                </span>
-              </div>
-            ) : (
-              <div
-                className="flex justify-between items-center border-b border-gray-800 pb-6 mb-6 cursor-pointer hover:bg-[#0a0a0a] px-4 py-4 transition"
-                onClick={() => setActiveIndex(index)}
-              >
-                <h3 className="text-xl font-semibold max-lg:text-base">
-                  {item.q}
-                </h3>
-
-                <span className="text-lime-400 text-2xl">+</span>
-              </div>
-            )}
-
-          </div>
-        ))}
-
-        {/* NAVIGATION */}
-        <div className="flex justify-between items-center mt-16 border-t border-gray-800 pt-10 max-lg:text-sm">
-
-          <div className="flex items-center gap-3 cursor-pointer">
-            <span className="text-2xl">←</span>
-            <span className="text-lg max-lg:text-sm">Prev</span>
-          </div>
-
-          <div className="w-[1px] h-10 bg-gray-800"></div>
-
-          <div className="flex items-center gap-3 cursor-pointer">
-            <span className="text-lg max-lg:text-sm">Next</span>
-            <span className="text-2xl">→</span>
-          </div>
-
-        </div>
-
-      </div>
+        .scroll-reveal.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
 
     </section>
   );

@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion";
+
 export default function ProjectFooter() {
   return (
     <div className="bg-black text-white">
@@ -5,20 +9,36 @@ export default function ProjectFooter() {
       {/* LET'S TALK SECTION */}
       <section className="text-center py-32 px-6 max-lg:py-16 max-lg:px-4">
 
-        <h1 className="text-[120px] md:text-[160px] font-extrabold text-lime-400 leading-none mb-10
-        max-lg:text-[48px] max-lg:mb-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-[120px] md:text-[160px] font-extrabold text-lime-400 leading-none mb-10
+        max-lg:text-[48px] max-lg:mb-6"
+        >
           LET’S TALK
-        </h1>
+        </motion.h1>
 
-        <a
+        <motion.a
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true }}
           href="mailto:hello@pentaclay.com"
           className="block text-[40px] md:text-[60px] font-semibold text-gray-300 hover:text-lime-400 transition-colors duration-300 mb-20
           max-lg:text-[18px] max-lg:mb-10 break-words"
         >
           hello@pentaclay.com
-        </a>
+        </motion.a>
 
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
           <div className="group relative w-40 h-40 rounded-full border border-gray-500 flex items-center justify-center cursor-pointer overflow-hidden
           max-lg:w-24 max-lg:h-24">
 
@@ -33,7 +53,7 @@ export default function ProjectFooter() {
             max-lg:w-8 max-lg:h-8"></div>
 
           </div>
-        </div>
+        </motion.div>
 
       </section>
 
@@ -41,7 +61,13 @@ export default function ProjectFooter() {
       {/* FOOTER */}
       <footer className="max-w-7xl mx-auto px-6 py-0 max-lg:px-4">
 
-        <div className="grid md:grid-cols-4 gap-12 max-lg:grid-cols-1 max-lg:gap-10">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-4 gap-12 max-lg:grid-cols-1 max-lg:gap-10"
+        >
 
           {/* About */}
           <div>
@@ -105,21 +131,33 @@ export default function ProjectFooter() {
             </div>
           </div>
 
-        </div>
+        </motion.div>
 
 
         {/* bottom line */}
-        <div className="border-t border-gray-800 mt-20 pt-6 text-gray-400 text-sm max-lg:text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="border-t border-gray-800 mt-20 pt-6 text-gray-400 text-sm max-lg:text-center"
+        >
           © 2024 All rights for Pentaclay
-        </div>
+        </motion.div>
 
         {/* BIG BRAND TEXT */}
-        <div className="w-full text-center overflow-hidden mt-10">
+        <motion.div
+          initial={{ opacity: 0, y: 120 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="w-full text-center overflow-hidden mt-10"
+        >
           <h1 className="text-[180px] md:text-[260px] font-extrabold text-gray-200 leading-none tracking-tight
           max-lg:text-[60px]">
             PENTOS
           </h1>
-        </div>
+        </motion.div>
 
       </footer>
 

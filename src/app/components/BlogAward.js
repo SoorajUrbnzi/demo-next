@@ -1,10 +1,12 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function BlogAward() {
   return (
     <section className="relative bg-black text-white py-20 lg:py-36 overflow-hidden">
 
       {/* Animated Star */}
       <div className="absolute left-[20px] top-[340px] w-[60px] h-[60px] lg:w-[90px] lg:h-[90px] flex items-center justify-center">
-
         <svg
           viewBox="0 0 100 100"
           className="w-full h-full star-spin"
@@ -17,7 +19,6 @@ export default function BlogAward() {
           <line x1="12" y1="12" x2="88" y2="88"/>
           <line x1="88" y1="12" x2="12" y2="88"/>
         </svg>
-
       </div>
 
       <div className="absolute right-6 lg:right-24 top-20 lg:top-220">
@@ -28,15 +29,27 @@ export default function BlogAward() {
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
 
         {/* Small label */}
-        <div className="flex items-center gap-4 text-gray-400 mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-4 text-gray-400 mb-6"
+        >
           <span>Excellency Awards</span>
           <div className="w-20 h-[1px] bg-gray-600"></div>
-        </div>
+        </motion.div>
 
         {/* Main Heading */}
-        <h2 className="text-[42px] lg:text-[110px] font-bold leading-tight lg:leading-none mb-14 lg:mb-24">
+        <motion.h2
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-[42px] lg:text-[110px] font-bold leading-tight lg:leading-none mb-14 lg:mb-24"
+        >
           Awards & Recognitions
-        </h2>
+        </motion.h2>
 
         {/* Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-14 lg:gap-x-24 lg:gap-y-24">
@@ -45,8 +58,13 @@ export default function BlogAward() {
           <div className="space-y-14 lg:space-y-24">
 
             {/* 2024 */}
-            <div className="group flex items-start gap-6 lg:gap-10 lg:border-r border-gray-800 lg:pr-16">
-              
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-6 lg:gap-10 lg:border-r border-gray-800 lg:pr-16"
+            >
               <div className="text-[40px] lg:text-[80px] font-bold text-gray-700 lg:rotate-[-90deg] group-hover:text-[#C9F31D] transition">
                 2024
               </div>
@@ -67,11 +85,16 @@ export default function BlogAward() {
                   in creating engaging user interactions.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* 2022 */}
-            <div className="group flex items-start gap-6 lg:gap-10 lg:border-r border-gray-800 lg:pr-16">
-              
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-6 lg:gap-10 lg:border-r border-gray-800 lg:pr-16"
+            >
               <div className="text-[40px] lg:text-[80px] font-bold text-gray-700 lg:rotate-[-90deg] group-hover:text-[#C9F31D] transition">
                 2022
               </div>
@@ -92,7 +115,7 @@ export default function BlogAward() {
                   recognized for creativity and skill.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 
@@ -100,8 +123,13 @@ export default function BlogAward() {
           <div className="space-y-14 lg:space-y-24">
 
             {/* 2023 */}
-            <div className="group flex items-start gap-6 lg:gap-10">
-              
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-6 lg:gap-10"
+            >
               <div className="text-[40px] lg:text-[80px] font-bold text-gray-700 lg:rotate-[-90deg] group-hover:text-[#C9F31D] transition">
                 2023
               </div>
@@ -122,11 +150,16 @@ export default function BlogAward() {
                   competition, highlighting innovation.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* 2021 */}
-            <div className="group flex items-start gap-6 lg:gap-10">
-              
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-6 lg:gap-10"
+            >
               <div className="text-[40px] lg:text-[80px] font-bold text-gray-700 lg:rotate-[-90deg] group-hover:text-[#C9F31D] transition">
                 2021
               </div>
@@ -147,7 +180,7 @@ export default function BlogAward() {
                   dynamic and engaging interactions.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 
